@@ -63,27 +63,86 @@ aside{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+
+}
+
+.card-position{
+    width: 550px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
     
 }
 
-.card-back{
+/*********
+CARD BACK
+*********/
+.card-size{
     width: 447px;
-    height: 284px;
+    height: 240px;
+}
+.card-back{
     background-image: url(images/bg-card-back.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 15px;
+    position: relative;
+    align-self: flex-end;
 }
 
+.card-back_cvc{
+    position: absolute;
+    right: 60px;
+    top: 49%;
+    transform: translateY(-49%);
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+/*********
+CARD FRONT
+*********/
+
 .card-front{
-    width: 447px;
-    height: 284px;
     background-image: url(images/bg-card-front.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 15px;
+    color: #fff;
+    font-size: 18px;
+    display: grid;
+    grid-template-rows: 1fr 2fr 0.5fr;
+    padding: 30px;
+    margin-bottom: 38px;
+}
+
+.card-front_number{
+    align-self:flex-end;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.card-front_info{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-front_info__name,
+.card-front_info__date{
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.5px;
 }
 
 /*********
@@ -161,4 +220,25 @@ button{
     background-color: hsl(278, 68%, 11%);
     color: #fff;
     margin-top: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1440px){
+    .card-position{
+        width: 500px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+        
+    }
+    article{
+        width: 110%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
