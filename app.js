@@ -11,9 +11,18 @@ const cardNum = document.querySelector('.card-front_number')
 const cardMonth = document.querySelector('.c-month')
 const cardYear = document.querySelector('.c-year')
 const cardCVC = document.querySelector('.card-back_cvc')
+const expDate = document.querySelector('.form-date-format')
 
-const num = formNumber.value
 
+const num = formNumber.value;
+
+
+
+    const err = document.createElement('p')
+    err.textContent = `Exceeded limit`;
+    err.style.fontSize = '11px';
+    err.style.color = 'red'
+    err.style.marginTop = '3px'
 
 //////////////////////
 
@@ -27,8 +36,6 @@ function formatStringWithSpaces(num) {
   
   // Example usage:
   const formattedInput = formatStringWithSpaces(num);
-  console.log(formattedInput);
-  
 
 ////////////////
 
@@ -39,13 +46,33 @@ input.forEach((e) =>{
         cardName.textContent = e.value
        } else if( e === formNumber){
             const formattedInput = formatStringWithSpaces(e.value);
-           cardNum.textContent = formattedInput
+            if(formattedInput.length <= 19){
+                cardNum.textContent = formattedInput;
+                err.remove()
+            } else{
+                formNumber.insertAdjacentElement('afterend', err)
+            }
         } else if(e === formMonth){
-        cardMonth.textContent = e.value
+            if(e.value.length <= 2){
+                cardMonth.textContent = e.value
+                err.remove()
+            } else{
+                expDate.insertAdjacentElement('afterend', err)
+            }
        } else if(e === formYear){
-        cardYear.textContent = e.value} 
+            if(e.value.length <= 2){
+                cardYear.textContent = e.value
+                err.remove()
+            } else{
+                expDate.insertAdjacentElement('afterend', err)
+            }}
         else if(e === formCVC){
-            cardCVC.textContent = e.value;
+            if(e.value.length <= 3){
+                cardCVC.textContent = e.value;
+                err.remove()
+            } else{
+                expDate.insertAdjacentElement('afterend', err)
+            }
     }
     })
 
