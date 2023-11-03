@@ -1,0 +1,164 @@
+/*
+
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+- Red (input errors): hsl(0, 100%, 66%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Light grayish violet: hsl(270, 3%, 87%)
+- Dark grayish violet: hsl(279, 6%, 55%)
+- Very dark violet: hsl(278, 68%, 11%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 18px
+
+### Font
+
+- Family: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
+- Weights: 500
+
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+    
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+aside{
+    background-image: url(images/bg-main-desktop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.card-back{
+    width: 447px;
+    height: 284px;
+    background-image: url(images/bg-card-back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.card-front{
+    width: 447px;
+    height: 284px;
+    background-image: url(images/bg-card-front.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+/*********
+FORM
+*********/
+
+article{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    display: flex;
+    width: 600px;
+}
+
+
+.form-name,
+.form-number,
+.form-date,
+.form-exp{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-input-date,
+.form-date-format{
+    display: flex;
+}
+
+#name,
+#number,
+#date,
+#cvc,
+#year,
+#month{
+    padding: 13px 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: hsl(0, 0%, 66%);
+    border: 1px solid hsl(270, 3%, 87%);
+
+}
+
+#month,
+#year{
+    width: 80px;
+}
+
+#month{
+    margin-right: 10px;
+}
+
+#year{
+    margin-right: 20px;
+}
+
+label{
+    text-transform: uppercase;
+    color: hsl(287, 5%, 34%);  
+    font-size: 13px; 
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+
+button{
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 19px;
+    background-color: hsl(278, 68%, 11%);
+    color: #fff;
+    margin-top: 20px;
+}
