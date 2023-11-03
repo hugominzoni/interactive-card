@@ -12,7 +12,25 @@ const cardMonth = document.querySelector('.c-month')
 const cardYear = document.querySelector('.c-year')
 const cardCVC = document.querySelector('.card-back_cvc')
 
+const num = formNumber.value
 
+
+//////////////////////
+
+function formatStringWithSpaces(num) {
+    // Use a regular expression to insert a space every 4 characters
+    const formattedString = num.replace(/(\d{4})/g, '$1 ');
+  
+    // Trim any leading or trailing spaces
+    return formattedString.trim();
+  }
+  
+  // Example usage:
+  const formattedInput = formatStringWithSpaces(num);
+  console.log(formattedInput);
+  
+
+////////////////
 
 input.forEach((e) =>{
     
@@ -20,7 +38,8 @@ input.forEach((e) =>{
        if(e === formName){
         cardName.textContent = e.value
        } else if( e === formNumber){
-           cardNum.textContent = formNumber.value
+            const formattedInput = formatStringWithSpaces(e.value);
+           cardNum.textContent = formattedInput
         } else if(e === formMonth){
         cardMonth.textContent = e.value
        } else if(e === formYear){
