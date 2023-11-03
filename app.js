@@ -16,13 +16,17 @@ const expDate = document.querySelector('.form-date-format')
 
 const num = formNumber.value;
 
+const wrongYear = document.createElement('p')
+wrongYear.textContent = 'Please insert a month between 1 and 12';
+wrongYear.style.fontSize = '11px';
+wrongYear.style.color = 'red'
+wrongYear.style.marginTop = '3px'
 
-
-    const err = document.createElement('p')
-    err.textContent = `Exceeded limit`;
-    err.style.fontSize = '11px';
-    err.style.color = 'red'
-    err.style.marginTop = '3px'
+const err = document.createElement('p')
+err.textContent = `Exceeded limit`;
+err.style.fontSize = '11px';
+err.style.color = 'red'
+err.style.marginTop = '3px'
 
 //////////////////////
 
@@ -54,10 +58,11 @@ input.forEach((e) =>{
             }
         } else if(e === formMonth){
             if(e.value.length <= 2){
+                if(e.value > 12 || e.value <= 0 || e.value == null){
+                    expDate.insertAdjacentElement('afterend', wrongYear)
+                }else{
                 cardMonth.textContent = e.value
-                err.remove()
-            } else{
-                expDate.insertAdjacentElement('afterend', err)
+                wrongYear.remove()}
             }
        } else if(e === formYear){
             if(e.value.length <= 2){
