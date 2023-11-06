@@ -3,8 +3,11 @@ const formNumber = document.getElementById('number')
 const formMonth = document.getElementById('month')
 const formYear = document.getElementById('year')
 const formCVC = document.getElementById('cvc')
-const button = document.querySelector('button')
-const input = document.querySelectorAll('input')
+const button = document.querySelector('#send')
+const input = document.querySelectorAll('.input')
+const form = document.querySelector('.form')
+const confirmation = document.querySelector('.confirmation')
+
 
 const cardName = document.querySelector('.card-front_info__name')
 const cardNum = document.querySelector('.card-front_number')
@@ -82,6 +85,15 @@ input.forEach((e) =>{
     })
 
 })
+
+button.addEventListener('click', formSend)
+
+function formSend(){
+    console.log('hello');
+    form.classList.add('hidden')
+    confirmation.classList.remove('hidden')
+
+}
 
 
 /*

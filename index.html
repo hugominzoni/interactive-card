@@ -36,6 +36,12 @@
     </aside>
     <article>
       <div class="form-container">
+        <div class="confirmation hidden">
+          <img src="images/icon-complete.svg" alt="">
+          <h2>THANK YOU!</h2>
+          <p>We've added your card details</p>
+          <button>Confirm</button>
+        </div>
         <div class="form">
           <div class="form-name">
             <label for="name">Cardholder Name</label>
@@ -58,19 +64,11 @@
               <input type="number" name="cvc" id="cvc" placeholder="e.g. 123" maxlength="3">
             </div>
           </div>
-          <button>Confirm</button>
+          <button id="send">Confirm</button>
         </div>
       </div>
     </article>
   </main>
-
-  <!-- Completed state start 
-
-  Thank you!
-  We've added your card details
-  Continue
-
-  -->
   
   <footer>
     <div class="attribution">

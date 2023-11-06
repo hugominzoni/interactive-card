@@ -154,11 +154,18 @@ article{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
+
+.form{
+    position: relative;
+}
+
 
 .form-container{
     display: flex;
     width: 600px;
+    position: relative;
 }
 
 
@@ -222,6 +229,26 @@ button{
     margin-top: 20px;
     cursor: pointer;
 }
+
+.confirmation{
+    text-align: center;
+
+}
+
+.confirmation h2,
+.confirmation p,
+.confirmation img{
+    margin-bottom: 20px;
+}
+
+.confirmation button{
+    width: 400px;
+}
+
+.hidden{
+    display:  none;
+}
+
 
 @media screen and (max-width: 1440px){
     .card-position{
